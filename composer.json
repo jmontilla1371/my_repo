@@ -1,0 +1,26 @@
+{
+  "name": "legacy/admin-system",
+  "description": "Sistema administrativo migrado a PHP 8.2 (ADOdb + mPDF)",
+  "type": "project",
+  "require": {
+    "php": ">=8.2",
+    "adodb/adodb-php": "^5.22",
+    "mpdf/mpdf": "^8.2"
+  },
+  "require-dev": {
+    "rector/rector": "^1.0",
+    "phpstan/phpstan": "^1.11",
+    "squizlabs/php_codesniffer": "^3.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "Legacy\\": "legacy/"
+    }
+  },
+  "scripts": {
+    "analyse": "phpstan analyse -l 5 src",
+    "cs": "phpcs --standard=PSR12 src public",
+    "rector": "rector process"
+  }
+}
